@@ -1,0 +1,14 @@
+{
+  "name": "localhost",
+  "normal": {
+    "knife_zero": {
+      "host": "localhost"
+    },
+    "tags": [
+
+    ]
+  },
+  "run_list": [
+    "recipe[iptables::disabled]"
+  ]
+}
