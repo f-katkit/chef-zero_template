@@ -31,7 +31,7 @@ dpkg -i chefdk_0.19.6-1_amd64.deb
 chef gem install knife-zero
 
 # git repository clone
-# git clone *****
+git clone https://github.com/f-katkit/chef-zero_template.git
 
 # install bootstrap
  knife zero bootstrap localhost -x root --node-name localhost
