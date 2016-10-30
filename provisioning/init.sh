@@ -30,8 +30,6 @@ wget https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.19.6-1_amd64.deb
 sudo dpkg -i chefdk_0.19.6-1_amd64.deb
 sudo chef gem install knife-zero
 
-# git repository clone
-sudo git clone https://github.com/f-katkit/chef-zero_template.git /root/chef-zero
-
-# install bootstrap
-#  knife zero bootstrap localhost -x root --node-name localhost
+# install bootstrap or chef-client -z
+# knife zero bootstrap localhost -x root --node-name localhost
+sudo sh -c "cd /root/chef-zero/; chef-client -z -N localhost"
