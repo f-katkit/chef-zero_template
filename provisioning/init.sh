@@ -5,7 +5,7 @@
 
 # install utility application.
 sudo apt-get update
-sudo apt-get install -yq wget git ruby curl vim openssl openssh-server
+sudo apt-get install -yq wget ruby curl vim git openssl openssh-server zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev
 
 # enable root login
 sudo sed -i -e "s/PermitRootLogin = .*/PermitRootLogin = without-password/g" /etc/ssh/sshd_config
