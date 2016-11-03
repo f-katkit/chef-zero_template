@@ -9,6 +9,7 @@
     ]
   },
   "run_list": [
-    "recipe[iptables::disabled]"
+    "recipe[anyenv::default]",
+    "recipe[anyenv::rbenv]"
   ]
 }
