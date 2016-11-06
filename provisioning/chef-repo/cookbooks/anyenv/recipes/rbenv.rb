@@ -9,23 +9,23 @@
 
 # install rbenv for root
 # edit profile for root
-bash 'install_rbenv' do
+bash 'install_rbenv_for_root' do
   user 'root'
-  not_if { File.exists?("~/.anyenv/envs/rbenv/bin/rbenv") }
+  not_if { File.exists?("/root/.anyenv/envs/rbenv/bin/rbenv") }
   code <<-EOH
-    ~/.anyenv/bin/anyenv install rbenv
-    source ~/.profile
+    /root/.anyenv/bin/anyenv install rbenv
+    source /root/.profile
   EOH
   notifies :run, 'bash[install_ruby]', :delayed
 end
 
-bash 'install_ruby' do
+bash 'install_ruby_for_root' do
   user 'root'
   environment 'HOME' => '/root'
   action :nothing
   code <<-EOH
-    source ~/.profile
-     ~/.anyenv/envs/rbenv/bin/rbenv install 2.3.1
-     ~/.anyenv/envs/rbenv/bin/rbenv global 2.3.1
+    source /root/.profile
+    /root/.anyenv/envs/rbenv/bin/rbenv install #{node['ruby']['version']}
+    /root/.anyenv/envs/rbenv/bin/rbenv global #{node['ruby']['version']}
   EOH
 end

@@ -22,7 +22,7 @@ git '/root/.anyenv' do
 end
 
 # edit profile for root
-bash 'edit_profile' do
+bash 'edit_profile_for_root' do
   user 'root'
   not_if "grep '# ADDED' /root/.profile"
   code <<-EOH

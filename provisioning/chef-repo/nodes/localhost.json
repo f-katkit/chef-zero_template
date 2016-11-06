@@ -8,8 +8,23 @@
 
     ]
   },
+  "default": {
+    "anyenv": {
+      "user": [
+        "ubuntu"
+      ]
+    },
+    "ruby": {
+      "version": "2.3.1",
+      "user": [
+        "ubuntu"
+      ]
+    }
+  },
   "run_list": [
     "recipe[anyenv::default]",
-    "recipe[anyenv::rbenv]"
+    "recipe[anyenv::rbenv]",
+    "recipe[anyenv::user]",
+    "recipe[anyenv::user-rbenv]"
   ]
 }
